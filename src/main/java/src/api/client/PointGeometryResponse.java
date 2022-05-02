@@ -21,6 +21,11 @@ public class PointGeometryResponse {
 
     private Point location;
 
+    public PointGeometryResponse(Point location, List<Point> coordinates) {
+        this.coordinates = coordinates;
+        this.location = location;
+    }
+
     public PointGeometryResponse(String jsonString) throws JSONException {
         JSONObject json = new JSONObject(jsonString);
         JSONArray features = json.getJSONArray("features");
