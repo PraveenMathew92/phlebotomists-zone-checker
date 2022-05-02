@@ -10,13 +10,10 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.20'
+    implementation 'javax.mail:mail:1.4.1'
     implementation 'org.json:json:20090211'
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testRuntimeOnlzy 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 test {

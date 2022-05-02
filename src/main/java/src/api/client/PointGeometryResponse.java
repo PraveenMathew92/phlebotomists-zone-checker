@@ -1,6 +1,5 @@
 package src.api.client;
 
-import lombok.Data;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,9 +8,17 @@ import src.Point;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class PointGeometryResponse {
     private List<Point> coordinates;
+
+    public List<Point> getCoordinates() {
+        return coordinates;
+    }
+
+    public Point getLocation() {
+        return location;
+    }
+
     private Point location;
 
     public PointGeometryResponse(String jsonString) throws JSONException {
