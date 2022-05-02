@@ -1,4 +1,4 @@
-# phlebotomists-zone-checker
+# Phlebotomists Zone Checker
 
 ## Technologies
 - Java 11
