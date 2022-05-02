@@ -1,7 +1,6 @@
 package src;
 
 import org.json.JSONException;
-import src.api.client.APIClientFailedException;
 import src.api.client.Client;
 import src.api.client.PointGeometryResponse;
 
@@ -28,10 +27,13 @@ public class ZoneCheckService {
     }
 
     public void check(int phlebotomistId) {
+        System.out.println("Checking for phlebotomist" + phlebotomistId);
+
         PointGeometryResponse response = null;
         try {
             response = client.getResponse(phlebotomistId);
         } catch (Exception e) {
+            System.out.println("API error when checking for phlebotomist" + phlebotomistId);
             emailService.sendMail(phlebotomistId);
             return;
         }
@@ -48,6 +50,8 @@ public class ZoneCheckService {
         EmailService emailService = new EmailService();
         PointInPolygonChecker checker = new PointInPolygonChecker();
         ZoneCheckService service = new ZoneCheckService(client, emailService, checker);
+
+        System.out.println("START THE SERVICE");
 
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(4);
         executorService.scheduleWithFixedDelay(() -> {

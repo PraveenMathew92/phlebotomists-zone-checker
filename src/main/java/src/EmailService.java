@@ -29,10 +29,12 @@ public class EmailService {
                     }
                 });
         senderEmailAddress = new InternetAddress("pm.777rocky@gmail.com");
-        receiverAddress = new InternetAddress("pm.777rocky@gmail.com");
+        receiverAddress = new InternetAddress("engineering+challenge@sprinterhealth.com");
     }
 
     public void sendMail(int phlebotomistId) {
+        System.out.println("Sending Alert for phlebotomist" + phlebotomistId);
+
         try {
             Message message = new MimeMessage(session);
             message.setFrom(senderEmailAddress);
